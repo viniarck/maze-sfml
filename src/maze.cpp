@@ -1,3 +1,4 @@
+#include "exception.h"
 #include "maze.h"
 #include <iostream>
 #include <stdexcept>
@@ -52,10 +53,13 @@ void Maze::try_to_gen(int wall_rate_percent, int max_retries) {
         }
         retry += 1;
     }
-    throw std::invalid_argument(
+    std::string msg =
         "It couldn't generate a valid maze with wall_rate_percent: " +
         std::string(std::to_string(wall_rate_percent)) +
-        " max_retries: " + std::string(std::to_string(max_retries)));
+        " max_retries: " + std::string(std::to_string(max_retries));
+    auto exc = MazeException();
+    exc.content = msg;
+    throw exc;
 }
 
 std::pair<int, int> Maze::find_first_floor() {
