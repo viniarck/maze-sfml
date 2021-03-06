@@ -18,4 +18,4 @@ Make sure you have [sfml lib](https://www.sfml-dev.org/download/sfml/2.5.1/) ins
 
 You should expect to see a window similar to this one, where the cyan squares represent floor in the maze and the black ones represent wall:
 
-[!img](./assets/sample.png)
+![img](./assets/sample.png)
